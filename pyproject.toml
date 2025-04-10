@@ -21,7 +21,7 @@ torch = [
 torchvision = [
     { index = "pytorch-cu124" },
 ]
-cvtk = { git = "https://github.com/encore-ecosystem/CVTK" }
+cvtk = { git = "https://github.com/encore-ecosystem/CVTK", branch = "basic_usage" }
 
 [[tool.uv.index]]
 name = "pytorch-cu124"
