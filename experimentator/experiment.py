@@ -3,8 +3,8 @@ from prologger import Logger
 from pathlib import Path
 from typing import Sequence
 
-from experimentator.objects.pipeline import Pipeline
-from experimentator.objects.trainer import Trainer
+from experimentator.pipeline import Pipeline
+from experimentator.trainer import Trainer
 from experimentator.interfaces import Persist
 
 @dataclass

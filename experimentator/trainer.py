@@ -1,7 +1,7 @@
 from prologger import Logger
 from cvtk.interfaces import AbstractDataset
+from experimentator.measurer import Measurer
 from experimentator.interfaces import Model, Persist
-from experimentator.objects.measurer import Measurer
 from pathlib import Path
 from dataclasses import dataclass
 from tqdm import tqdm
@@ -25,7 +25,7 @@ class Trainer(Persist):
     def save(self, path: Path):
         raise NotImplementedError()
 
-    def train(self, model: Model):
+    def train(self, model: 'Model'):
         for epoch in tqdm(range(self.epochs), desc=f"Train step of: {model}"):
             model.train_step(self.train_dataset, self.measurer, self.logger, epoch)
 
@@ -36,4 +36,6 @@ class Trainer(Persist):
             model.eval_step(self.train_dataset, self.measurer, self.logger, epoch)
 
 
-__all__ = ["Trainer"]
+__all__ = [
+    "Trainer"
+]
