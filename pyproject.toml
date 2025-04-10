@@ -13,7 +13,7 @@ dependencies = [
 ]
 
 [tool.uv.sources]
-nodeflow = { git = "https://github.com/encore-ecosystem/NodeFlow" }
+nodeflow = { git = "https://github.com/encore-ecosystem/NodeFlow", branch = "dev" }
 prologger = { git = "https://github.com/encore-ecosystem/Prologger" }
 torch = [
     { index = "pytorch-cu124" },
