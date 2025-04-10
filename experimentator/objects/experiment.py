@@ -2,7 +2,8 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Sequence
 
-from experimentator import Pipeline, Trainer
+from experimentator.objects.pipeline import Pipeline
+from experimentator.objects.trainer import Trainer
 from experimentator.interfaces import Persist
 
 @dataclass
