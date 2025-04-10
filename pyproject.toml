@@ -11,7 +11,7 @@ dependencies = [
 ]
 
 [tool.uv.sources]
-nodeflow = { path = "../NodeFlow" }
+nodeflow = { git = "https://github.com/encore-ecosystem/NodeFlow" }
 torch = [
     { index = "pytorch-cu124" },
 ]
