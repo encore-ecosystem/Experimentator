@@ -1,6 +1,0 @@
-[project]
-name = "prologger"
-version = "0.1.0"
-description = "Logging and profiling toolkit"
-requires-python = ">=3.13"
-dependencies = []
