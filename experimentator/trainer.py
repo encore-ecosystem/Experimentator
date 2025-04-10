@@ -2,16 +2,17 @@ from prologger import Logger
 from experimentator.interfaces import Model, Dataset, Persist
 from experimentator.measurer import Measurer
 from pathlib import Path
-from typing import Sequence
+from dataclasses import dataclass
 
-
+@dataclass
 class Trainer(Persist):
-    def __init__(self, train_datasets: Sequence[Dataset], test_datasets: Sequence[Dataset], eval_datasets: Sequence[Dataset], epochs: int = 500):
-        self._num_epochs    = epochs
-        self._cur_epoch     = 0
-        self._train_datasets = train_datasets
-        self._test_datasets  = test_datasets
-        self._eval_datasets  = eval_datasets
+    train_dataset: Dataset
+    test_dataset: Dataset
+    eval_dataset: Dataset
+    epochs: int
+    measurer: Measurer
+    resume: bool
+    checkpoint_step : int
 
     @classmethod
     def load(cls, path: Path) -> 'Trainer':
@@ -20,22 +21,8 @@ class Trainer(Persist):
     def save(self, path: Path):
         raise NotImplementedError()
 
-    def __call__(self, model: Model, logger: Logger, metric_manager: Measurer):
-        for epoch in range(self._cur_epoch, self._num_epochs):
-            # train step
-            self._epoch = epoch
-
-            # train
-            logger.info(f"Trainer [epoch={self._epoch}]: Training")
-
-            # eval
-            logger.info(f"Trainer [epoch={self._epoch}]: Eval")
-
-            # complete
-            logger.info(f"Trainer [epoch={self._epoch}]: Step complete")
-            yield epoch
+    def train(self, model: Model, logger: Logger, metric_manager: Measurer):
+        raise NotImplementedError()
 
 
-__all__ = [
-    'Trainer'
-]
+__all__ = ["Trainer"]
