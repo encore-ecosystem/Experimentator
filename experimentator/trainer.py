@@ -1,15 +1,17 @@
-from prologger.prologger import Logger
+from prologger import Logger
 from experimentator.interfaces import Model, Dataset, Persist
 from experimentator.measurer import Measurer
 from pathlib import Path
+from typing import Sequence
 
 
 class Trainer(Persist):
-    def __init__(self, train_dataset: Dataset, eval_dataset: Dataset, epochs: int = 500):
+    def __init__(self, train_datasets: Sequence[Dataset], test_datasets: Sequence[Dataset], eval_datasets: Sequence[Dataset], epochs: int = 500):
         self._num_epochs    = epochs
         self._cur_epoch     = 0
-        self._train_dataset = train_dataset
-        self._eval_dataset  = eval_dataset
+        self._train_datasets = train_datasets
+        self._test_datasets  = test_datasets
+        self._eval_datasets  = eval_datasets
 
     @classmethod
     def load(cls, path: Path) -> 'Trainer':
