@@ -1,8 +1,9 @@
 from pathlib import Path
-from abc import ABC, abstractmethod
+from abc import ABCMeta, abstractmethod
+from nodeflow.adapter import Adapter
 
 
-class Model(ABC):
+class Model(Adapter, metaclass=ABCMeta):
     @classmethod
     @abstractmethod
     def load(cls, weights_path: Path):

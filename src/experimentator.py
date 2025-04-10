@@ -19,12 +19,12 @@ class Experimentator:
 
     def run_experiment(
         self,
-        trainer: Trainer,
-        logger: Logger,
-        measurer: Measurer,
-        experiment_name: str = "experiment",
-        checkpoint_step: int = 5,
-        resume: bool = True,
+        trainer         : Trainer,
+        logger          : Logger,
+        measurer        : Measurer,
+        experiment_name : str  = "experiment",
+        checkpoint_step : int  = 5,
+        resume          : bool = True,
     ):
         #
         assert checkpoint_step > 0
