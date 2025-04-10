@@ -1,6 +1,6 @@
 from typing import Optional
 
-from src.interfaces import Model
+from experimentator.interfaces import Model
 from prologger.prologger.logger.interface import Logger
 from . import Pipeline
 from .experiment import Experiment

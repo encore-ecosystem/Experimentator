@@ -1,8 +1,8 @@
 from dataclasses import dataclass
 from pathlib import Path
 
-from src import Pipeline, Trainer
-from src.interfaces import Persist
+from experimentator import Pipeline, Trainer
+from experimentator.interfaces import Persist
 
 @dataclass
 class Experiment(Persist):

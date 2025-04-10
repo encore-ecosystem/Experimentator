@@ -1,6 +1,6 @@
 from prologger.prologger import Logger
-from src.interfaces import Model, Dataset, Persist
-from src.measurer import Measurer
+from experimentator.interfaces import Model, Dataset, Persist
+from experimentator.measurer import Measurer
 from pathlib import Path
 
 
