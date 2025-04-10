@@ -9,11 +9,10 @@ from deque import deque
 import os
 
 
-class Experimentator:
-    def __init__(self, model: Model, experiments_path: Path):
+class ExperimentatorClient:
+    def __init__(self, experiments_path: Path):
         self._tasks = deque()
 
-        self._model = model
         self._experiments_path = experiments_path
         self._experiments_path.mkdir(parents=True, exist_ok=True)
 
@@ -61,5 +60,5 @@ class Experimentator:
 
 
 __all__ = [
-    "Experimentator",
+    "ExperimentatorClient",
 ]
