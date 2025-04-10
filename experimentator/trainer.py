@@ -10,9 +10,10 @@ class Trainer(Persist):
     test_dataset: Dataset
     eval_dataset: Dataset
     epochs: int
-    measurer: Measurer
-    resume: bool
     checkpoint_step : int
+    resume: bool
+    measurer: Measurer
+    logger : Logger
 
     @classmethod
     def load(cls, path: Path) -> 'Trainer':
