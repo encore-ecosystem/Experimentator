@@ -9,6 +9,12 @@ class Pipeline(Persist):
     def __init__(self, models: Sequence[Model]):
         self._models = models
 
+    def __len__(self) -> int:
+        return len(self._models)
+
+    def __iter__(self):
+        return self._models.__iter__()
+
     @classmethod
     def load(cls, src_path: Path) -> 'Pipeline':
         with open(src_path, "rb") as file:

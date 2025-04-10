@@ -1,4 +1,5 @@
 from dataclasses import dataclass
+from prologger import Logger
 from pathlib import Path
 from typing import Sequence
 
@@ -11,6 +12,7 @@ class Experiment(Persist):
     name     : str
     pipeline : Pipeline
     trainers : Sequence[Trainer]
+    logger   : Logger
 
     @classmethod
     def load(cls, src_path: Path) -> 'Experiment':

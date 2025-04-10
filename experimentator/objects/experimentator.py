@@ -20,9 +20,13 @@ class ExperimentatorClient:
             experiment = self._experiments.pop(0)
             self.run_experiment(experiment)
 
-    def run_experiment(self, experiment: Experiment):
-        raise NotImplementedError()
+    @staticmethod
+    def run_experiment(experiment: Experiment):
+        assert len(experiment.pipeline) == len(experiment.trainers)
 
+        experiment.logger.info(f"Running experiment: {experiment.name}")
+        for model, trainer in zip(experiment.pipeline, experiment.trainers):
+            trainer.train(model)
 
 __all__ = [
     "ExperimentatorClient",

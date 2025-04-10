@@ -45,7 +45,7 @@ wheels = [
 [[package]]
 name = "cvtk"
 version = "0.2.0"
-source = { git = "https://github.com/encore-ecosystem/CVTK?branch=basic_usage#93d983ce1aaca07ce8c0c969cdae1761f34649be" }
+source = { git = "https://github.com/encore-ecosystem/CVTK?branch=basic_usage#19e3596c6ccf1d606fa9b3a3a737e112a842693d" }
 dependencies = [
     { name = "nodeflow" },
     { name = "pillow" },
@@ -80,7 +80,7 @@ dependencies = [
 requires-dist = [
     { name = "cvtk", git = "https://github.com/encore-ecosystem/CVTK?branch=basic_usage" },
     { name = "matplotlib", specifier = ">=3.10.1" },
-    { name = "nodeflow", git = "https://github.com/encore-ecosystem/NodeFlow" },
+    { name = "nodeflow", git = "https://github.com/encore-ecosystem/NodeFlow?branch=dev" },
     { name = "prologger", git = "https://github.com/encore-ecosystem/Prologger" },
     { name = "torch", specifier = ">=2.6.0", index = "https://download.pytorch.org/whl/cu124" },
 ]
@@ -247,8 +247,8 @@ wheels = [
 
 [[package]]
 name = "nodeflow"
-version = "0.1.1"
-source = { git = "https://github.com/encore-ecosystem/NodeFlow#87f33eda66273d25755cab7dd7574868d4738fda" }
+version = "1.0.0"
+source = { git = "https://github.com/encore-ecosystem/NodeFlow?branch=dev#0e95902f171d081c4e01225a24bcaf8c213aa52d" }
 
 [[package]]
 name = "numpy"
