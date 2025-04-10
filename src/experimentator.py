@@ -1,20 +1,29 @@
-from experimentator.interfaces import Model
-from .logger.logger import Logger
+from typing import Optional
+
+from src.interfaces import Model
+from prologger.prologger.logger.interface import Logger
+from . import Pipeline
+from .experiment import Experiment
 from .measurer import Measurer
 from .trainer import Trainer
 
 from pathlib import Path
-from deque import deque
 
 import os
 
 
 class ExperimentatorClient:
     def __init__(self, experiments_path: Path):
-        self._tasks = deque()
-
         self._experiments_path = experiments_path
         self._experiments_path.mkdir(parents=True, exist_ok=True)
+        self._current_experiment: Optional[Experiment] = None
+
+    def load_experiment(self, experiment_name: str):
+        self._current_experiment = Experiment.load(self._experiments_path / experiment_name)
+
+    def get_pipeline(self) -> Pipeline:
+        assert self._current_experiment is not None, "Please, load experiment"
+        return self._current_experiment.pipeline
 
     def run_experiment(
         self,

@@ -8,10 +8,12 @@ dependencies = [
     "matplotlib>=3.10.1",
     "nodeflow",
     "torch>=2.6.0",
+    "prologger"
 ]
 
 [tool.uv.sources]
 nodeflow = { git = "https://github.com/encore-ecosystem/NodeFlow" }
+prologger = { path = "./prologger" }
 torch = [
     { index = "pytorch-cu124" },
 ]

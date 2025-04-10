@@ -1,23 +1,24 @@
-from experimentator.interfaces import Model, Dataset, Logger
-from experimentator.measurer import MetricManager
-
+from prologger.prologger import Logger
+from src.interfaces import Model, Dataset, Persist
+from src.measurer import Measurer
 from pathlib import Path
 
 
-class Trainer:
+class Trainer(Persist):
     def __init__(self, train_dataset: Dataset, eval_dataset: Dataset, epochs: int = 500):
         self._num_epochs    = epochs
         self._cur_epoch     = 0
         self._train_dataset = train_dataset
         self._eval_dataset  = eval_dataset
 
-    def load_config(self, path: Path):
+    @classmethod
+    def load(cls, path: Path) -> 'Trainer':
         raise NotImplementedError()
     
-    def save_config(self, path: Path):
+    def save(self, path: Path):
         raise NotImplementedError()
 
-    def __call__(self, model: Model, logger: Logger, metric_manager: MetricManager):
+    def __call__(self, model: Model, logger: Logger, metric_manager: Measurer):
         for epoch in range(self._cur_epoch, self._num_epochs):
             # train step
             self._epoch = epoch
