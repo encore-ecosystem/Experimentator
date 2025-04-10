@@ -1,14 +1,15 @@
 from prologger import Logger
-from experimentator.interfaces import Model, Dataset, Persist
+from cvtk import AbstractDataset
+from experimentator.interfaces import Model, Persist
 from experimentator.measurer import Measurer
 from pathlib import Path
 from dataclasses import dataclass
 
 @dataclass
 class Trainer(Persist):
-    train_dataset: Dataset
-    test_dataset: Dataset
-    eval_dataset: Dataset
+    train_dataset: AbstractDataset
+    test_dataset: AbstractDataset
+    eval_dataset: AbstractDataset
     epochs: int
     checkpoint_step : int
     resume: bool

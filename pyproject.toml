@@ -8,7 +8,8 @@ dependencies = [
     "matplotlib>=3.10.1",
     "nodeflow",
     "torch>=2.6.0",
-    "prologger"
+    "prologger",
+    "cvtk",
 ]
 
 [tool.uv.sources]
@@ -20,6 +21,7 @@ torch = [
 torchvision = [
     { index = "pytorch-cu124" },
 ]
+cvtk = { git = "https://github.com/encore-ecosystem/CVTK" }
 
 [[tool.uv.index]]
 name = "pytorch-cu124"
