@@ -1,5 +1,5 @@
-from experimentator.interfaces.persist import Persist
-from experimentator.interfaces.model import Model
+from src.experimentator.interfaces.persist import Persist
+from src.experimentator.interfaces.model import Model
 from typing import Sequence
 from pathlib import Path
 

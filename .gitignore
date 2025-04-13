@@ -1,3 +1,5 @@
+.idea
 .venv
 .ruff_cache
-.idea
+
+dist

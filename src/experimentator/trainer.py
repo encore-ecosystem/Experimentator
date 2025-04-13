@@ -1,7 +1,7 @@
 from prologger import Logger
 from cvtk.interfaces import AbstractDataset
-from experimentator.measurer import Measurer
-from experimentator.interfaces import Model, Persist
+from src.experimentator.measurer import Measurer
+from src.experimentator.interfaces import Model, Persist
 from pathlib import Path
 from dataclasses import dataclass
 from tqdm import tqdm

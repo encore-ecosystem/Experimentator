@@ -34,7 +34,7 @@ class Model(Adapter, metaclass=ABCMeta):
         raise NotImplementedError
 
 
-from experimentator.measurer import Measurer
+from src.experimentator.measurer import Measurer
 
 __all__ = [
     'Model',

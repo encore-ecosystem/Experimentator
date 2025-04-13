@@ -3,9 +3,9 @@ from prologger import Logger
 from pathlib import Path
 from typing import Sequence
 
-from experimentator.pipeline import Pipeline
-from experimentator.trainer import Trainer
-from experimentator.interfaces import Persist
+from src.experimentator.pipeline import Pipeline
+from src.experimentator.trainer import Trainer
+from src.experimentator.interfaces import Persist
 
 @dataclass
 class Experiment(Persist):
