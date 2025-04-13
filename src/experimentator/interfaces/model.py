@@ -1,4 +1,4 @@
-from src.experimentator.measurer import Measurer
+from ..measurer import Measurer
 from abc import ABCMeta, abstractmethod
 from nodeflow.adapter import Adapter
 from cvtk import AbstractDataset

@@ -16,7 +16,6 @@ class Measurer:
     def update(self, metric: str, value: float):
         self.raw_metrics[metric] = self.raw_metrics.get(metric, []) + [value]
 
-
     def get_raw(self, metric: str) -> list[float]:
         return self.raw_metrics.get(metric, [])
 
