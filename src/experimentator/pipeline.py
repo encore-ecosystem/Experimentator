@@ -6,7 +6,7 @@ from pathlib import Path
 import pickle
 
 
-class Pipeline(Persist):
+class Pipeline(Persist, metaclass=Model):
     def __init__(self, models: Sequence[Model]):
         self._models = models
 
