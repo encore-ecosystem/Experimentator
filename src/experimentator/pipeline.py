@@ -1,14 +1,13 @@
-from abc import ABC
-
 from src.experimentator.interfaces.persist import Persist
 from src.experimentator.interfaces.model import Model
 from typing import Sequence
 from pathlib import Path
+from abc import ABCMeta
 
 import pickle
 
 
-class Pipeline(Persist, metaclass=Model):
+class Pipeline(Persist, Model, metaclass=ABCMeta):
     def __init__(self, models: Sequence[Model]):
         self._models = models
 
