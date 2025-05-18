@@ -25,8 +25,9 @@ class ExperimentatorClient:
         assert len(experiment.pipeline) == len(experiment.trainers)
 
         experiment.logger.info(f"Running experiment: {experiment.name}")
-        for model, trainer in zip(experiment.pipeline, experiment.trainers):
+        for model, trainer in experiment.modules:
             trainer.train(model)
+
 
 __all__ = [
     "ExperimentatorClient",

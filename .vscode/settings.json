@@ -1,0 +1,10 @@
+{
+    "files.exclude": {
+        "src/experimentator/interfaces/__pycache__": true,
+        "src/experimentator/__pycache__": true,
+        "dist": true,
+        ".venv": true,
+        ".ruff_cache": true,
+        ".idea": true
+    }
+}

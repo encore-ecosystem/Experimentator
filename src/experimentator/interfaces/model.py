@@ -33,8 +33,6 @@ class Model(Adapter, metaclass=ABCMeta):
         raise NotImplementedError
 
 
-
-
 __all__ = [
     'Model',
 ]

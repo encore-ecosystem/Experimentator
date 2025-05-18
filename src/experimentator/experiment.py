@@ -1,8 +1,6 @@
 from dataclasses import dataclass
 from prologger import Logger
 from pathlib import Path
-from typing import Sequence
-
 from .pipeline import Pipeline
 from .trainer import Trainer
 from .interfaces import Persist
@@ -10,9 +8,11 @@ from .interfaces import Persist
 @dataclass
 class Experiment(Persist):
     name     : str
-    pipeline : Pipeline
-    trainers : Sequence[Trainer]
+    modules  : list[tuple[Pipeline, Trainer]]
     logger   : Logger
+
+    def train(self):
+        self.pipeline.train()
 
     @classmethod
     def load(cls, src_path: Path) -> 'Experiment':
