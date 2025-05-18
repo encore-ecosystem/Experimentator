@@ -2,7 +2,6 @@ from .interfaces.persist import Persist
 from .interfaces.model import Model
 from typing import Sequence
 from pathlib import Path
-from prologger import Logger
 import pickle
 
 
@@ -15,10 +14,6 @@ class Pipeline(Persist):
 
     def __iter__(self):
         return self._models.__iter__()
-
-    def train(self, logger: Logger):
-        for model in self._models:
-            model.tra
 
     @classmethod
     def load(cls, src_path: Path) -> 'Pipeline':
